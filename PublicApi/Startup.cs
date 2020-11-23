@@ -53,10 +53,9 @@ namespace PublicApi
 
             app.UseCors(builder =>
             {
-                builder.WithOrigins("http://localhost:5001")
-                    .AllowAnyHeader()
-                    .WithMethods("GET", "POST")
-                    .AllowCredentials();
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
             });
 
             app.UseRouting();
