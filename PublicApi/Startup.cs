@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.VisualBasic;
 using PublicApi.Hubs;
+using PublicApi.Workers;
 
 namespace PublicApi
 {
@@ -25,6 +26,7 @@ namespace PublicApi
         {
             services.AddControllers();
             services.AddSignalR();
+            services.AddHostedService<ChuckNorrisBotWorker>();
             services.AddResponseCompression(opts =>
             {
                 opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
