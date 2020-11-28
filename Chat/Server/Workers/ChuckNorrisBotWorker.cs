@@ -1,10 +1,13 @@
-﻿using System.Threading;
+﻿using System;
+using System.Runtime.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 using Chat.Server.Hubs;
 using Chat.Server.Interfaces;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using RestSharp;
 
 namespace Chat.Server.Workers
 {
@@ -23,11 +26,36 @@ namespace Chat.Server.Workers
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                const string message = "more later";
-                _logger.LogInformation("Sending message to clients: {0} : {1}", "Chuck Norris", message);
-                await _chatHub.Clients.All.ReceiveMessage("Chuck Norris", message);
-                await Task.Delay(1000, stoppingToken);
+                var client = new RestClient("http://api.icndb.com");
+                var request = new RestRequest("/jokes/random?", DataFormat.Json);
+                var result = await client.GetAsync<Result>(request, stoppingToken);
+
+                _logger.LogInformation("Sending message to clients: {0} : {1}", "Chuck Fan", result.Value.Joke);
+                await _chatHub.Clients.All.ReceiveMessage("Chuck Fan", result.Value.Joke);
+                var nextMessageInSeconds = new Random().Next(5000, 30000);
+
+                await Task.Delay(nextMessageInSeconds, stoppingToken);
             }
         }
+    }
+
+    [DataContract]
+    public class Result
+    {
+        [DataMember(Name="type")]
+        public string Type { get; set; }
+
+        [DataMember(Name = "value")]
+        public Value Value { get; set; }
+    }
+
+    [DataContract]
+    public class Value
+    {
+        [DataMember(Name="id")]
+        public string Id { get; set; }
+
+        [DataMember(Name="joke")]
+        public string Joke { get; set; }
     }
 }
