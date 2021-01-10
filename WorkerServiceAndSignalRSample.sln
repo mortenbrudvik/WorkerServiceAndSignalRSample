@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat.Server", "Chat\Server\Chat.Server.csproj", "{C73180BC-0234-402E-8629-5B435CC319F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.Server", "Chat\Server\Chat.Server.csproj", "{C73180BC-0234-402E-8629-5B435CC319F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat.Client", "Chat\Client\Chat.Client.csproj", "{E84B333B-7BC3-4AA2-86C2-530D2A4B7983}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.Client", "Chat\Client\Chat.Client.csproj", "{E84B333B-7BC3-4AA2-86C2-530D2A4B7983}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat.Shared", "Chat\Shared\Chat.Shared.csproj", "{28EE789A-F6B2-42CC-88CB-EEAF7835068C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.Shared", "Chat\Shared\Chat.Shared.csproj", "{28EE789A-F6B2-42CC-88CB-EEAF7835068C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{59C20A32-AD69-445D-BBB8-7044227896B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,18 @@ Global
 		{28EE789A-F6B2-42CC-88CB-EEAF7835068C}.Release|x64.Build.0 = Release|Any CPU
 		{28EE789A-F6B2-42CC-88CB-EEAF7835068C}.Release|x86.ActiveCfg = Release|Any CPU
 		{28EE789A-F6B2-42CC-88CB-EEAF7835068C}.Release|x86.Build.0 = Release|Any CPU
+		{59C20A32-AD69-445D-BBB8-7044227896B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59C20A32-AD69-445D-BBB8-7044227896B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59C20A32-AD69-445D-BBB8-7044227896B5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{59C20A32-AD69-445D-BBB8-7044227896B5}.Debug|x64.Build.0 = Debug|Any CPU
+		{59C20A32-AD69-445D-BBB8-7044227896B5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{59C20A32-AD69-445D-BBB8-7044227896B5}.Debug|x86.Build.0 = Debug|Any CPU
+		{59C20A32-AD69-445D-BBB8-7044227896B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59C20A32-AD69-445D-BBB8-7044227896B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59C20A32-AD69-445D-BBB8-7044227896B5}.Release|x64.ActiveCfg = Release|Any CPU
+		{59C20A32-AD69-445D-BBB8-7044227896B5}.Release|x64.Build.0 = Release|Any CPU
+		{59C20A32-AD69-445D-BBB8-7044227896B5}.Release|x86.ActiveCfg = Release|Any CPU
+		{59C20A32-AD69-445D-BBB8-7044227896B5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
